@@ -1,0 +1,61 @@
+/* Fuente global para los botones */
+div[id], .button-text {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Contenedor principal */
+div[id] {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 14px 18px;
+    margin-bottom: 12px;
+
+    background: #ffffff;
+    border-radius: 12px;
+
+    /* BORDE CON COLOR */
+    border-left: 4px solid #00c853;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Hover */
+div[id]:hover {
+    transform: translateX(6px);
+    border-left-color: #00e676;
+    box-shadow: 0 0 16px rgba(0, 200, 83, 0.4);
+}
+
+/* Contenedor del icono */
+.button-image {
+    width: 42px;
+    height: 42px;
+
+    background: linear-gradient(135deg, #0f0f0f, #00c853);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icono */
+.button-image img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+}
+
+/* Texto */
+.button-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2933;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,32 @@
+.item-contacto {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    border-left: 4px solid #00c853;
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60px 2fr 1fr; /* espacio para icono */
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+}
+
+/* Icono negro-verde */
+.item-contacto img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(135deg, #0f0f0f, #00c853);
+    object-fit: contain;
+    
+}
+
+/* Texto del contacto */
+.item-contacto p {
+    margin: 0;
+    color: #1f2933;
+    font-weight: 600;
+}
