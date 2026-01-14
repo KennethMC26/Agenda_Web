@@ -1,21 +1,22 @@
 let ItemContacto = (imgContacto, nombre, telefono) => {
     let div = document.createElement("div");
     div.className = "item-contacto";
-    
-    let etiquetaImg = document.createElement("img");
-    etiquetaImg.src = `./assets/icons/${imgContacto}`;
 
-    let etiquetaNombre = document.createElement("p");
-    etiquetaNombre.textContent = nombre;
+    let img = document.createElement("img");
+    img.src = `./assets/icons/${imgContacto}`;
+    img.className = "contacto-img"; // 👈 CLAVE
 
-    let etiquetaTelefono = document.createElement("p");
-    etiquetaTelefono.textContent = telefono;
+    let nombreP = document.createElement("p");
+    nombreP.textContent = nombre;
 
-    div.appendChild(etiquetaImg);
-    div.appendChild(etiquetaNombre);
-    div.appendChild(etiquetaTelefono);
+    let telefonoP = document.createElement("p");
+    telefonoP.textContent = telefono;
+
+    div.appendChild(img);
+    div.appendChild(nombreP);
+    div.appendChild(telefonoP);
 
     return div;
 };
 
-export{ ItemContacto};
+export { ItemContacto };

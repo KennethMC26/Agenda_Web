@@ -1,71 +1,75 @@
-/* Contenedor del formulario */
+/* ================= Formulario ================= */
 .form-contacto {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 24px;
-    background: #ffffff; /* fondo blanco */
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    font-family: Arial, Helvetica, sans-serif;
+    gap: 1.5rem; /* Más espacio entre los elementos */
+    padding: 2rem;
+    border-radius: 16px;
+    background: #ffffff; /* formulario blanco */
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     max-width: 400px;
-    margin: 0 auto; /* centrar en pantalla */
+    margin: 2rem auto;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-/* Título del formulario */
+.form-contacto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Título */
 .form-contacto h3 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #00c853; /* verde */
-    margin: 0 0 12px 0;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
     text-align: center;
 }
 
 /* Inputs */
 .input-contacto {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    transition: all 0.25s ease;
-}
-
-/* Hover/focus en inputs */
-.input-contacto:focus {
-    border-color: #00c853;
-    box-shadow: 0 0 8px rgba(0, 200, 83, 0.3);
+    padding: 1.2rem; /* Más espacio dentro del input */
+    border-radius: 14px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    font-size: 1rem;
     outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Botón de agregar */
+.input-contacto::placeholder {
+    color: #94a3b8;
+}
+
+.input-contacto:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.25);
+}
+
+/* Botón agregar (negro-verde) */
 .btn-agregar {
-    padding: 12px;
-    border-radius: 8px;
+    padding: 1rem;
+    border-radius: 16px;
     border: none;
-    background: #00c853;
-    color: #ffffff;
-    font-weight: bold;
+    background: linear-gradient(135deg, #0f0f0f, #00c853); /* negro-verde */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
     cursor: pointer;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: all 0.25s ease;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-/* Hover del botón */
 .btn-agregar:hover {
-    background: #00e676;
-    box-shadow: 0 4px 12px rgba(0, 200, 83, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 200, 83, 0.5);
 }
 
-/* Espacio entre inputs y botón */
-.form-contacto .input-contacto,
-.form-contacto .btn-agregar {
-    width: 100%;
+.btn-agregar:active {
+    transform: scale(0.97);
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-    .form-contacto {
-        padding: 16px;
-    }
+/* Clase para ocultar elementos */
+.hidden {
+    display: none;
 }
