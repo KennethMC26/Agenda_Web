@@ -1,5 +1,5 @@
 import { ItemTodolist } from "../../common/itemtodolist/ItemTodolist.js";
-import { getTasksFromStorage, saveTasksToStorage } from "../../common/storage/Storage.js";
+import { getTasksFromStorage, saveTasksToStorage } from "../../common/storage/storage.js";
 
 let NewtodoForm = () => {
     let form = document.createElement("form");

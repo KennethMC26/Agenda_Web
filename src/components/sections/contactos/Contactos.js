@@ -1,5 +1,5 @@
 import { ItemContacto } from "../../common/itemContacto/ItemContacto.js";
-import { getContactsFromStorage, saveContactsToStorage } from "../../common/storage/Storage.js";
+import { getContactsFromStorage, saveContactsToStorage } from "../../common/storage/storage.js";
 
 let Contactos = () => {
     let sectionContactos = document.createElement("section");
