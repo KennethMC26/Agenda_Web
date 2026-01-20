@@ -1,19 +1,44 @@
 import { ItemContacto } from "../../common/itemContacto/ItemContacto.js";
-import { ContactList } from "./db.js";
+import { getContactsFromStorage, saveContactsToStorage } from "../../common/storage/Storage.js";
 
 let Contactos = () => {
-    let section = document.createElement("section");
-    section.className = "contactos";
+    let sectionContactos = document.createElement("section");
+    sectionContactos.className = "contactos";
 
     let h2 = document.createElement("h2");
     h2.textContent = "Contactos";
-    section.appendChild(h2);
+    sectionContactos.appendChild(h2);
 
-    ContactList.forEach((contact) => {
-        section.appendChild(ItemContacto("user.svg",contact.nombre, contact.telefono));
-    })
+    let contactos = getContactsFromStorage();
 
-    return section;
+    contactos.forEach((contact, index) => {
+
+        const onEdit = (nuevoNombre, nuevoTelefono) => {
+            contactos[index].nombre = nuevoNombre;
+            contactos[index].telefono = nuevoTelefono;
+            saveContactsToStorage(contactos);
+            window.location.reload();
+        };
+
+        const onDelete = () => {
+            contactos.splice(index, 1);
+            saveContactsToStorage(contactos);
+            window.location.reload();
+        };
+
+        sectionContactos.appendChild(
+            ItemContacto(
+                "user.svg",
+                contact.nombre,
+                contact.telefono,
+                onEdit,
+                onDelete
+            )
+        );
+
+    });
+
+    return sectionContactos;
 };
 
 export { Contactos };

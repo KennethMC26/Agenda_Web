@@ -1,45 +1,53 @@
-.item-contacto {
-    width: 100%;
-    max-width: 420px;
+.item-tarea {
+    width: calc(33% - 20px); /* Tres tarjetas por fila con margen */
     background: #ffffff;
     border-radius: 12px;
     padding: 20px;
-    margin-bottom: 15px;
-
+    margin: 10px;
     display: inline-flex;
     flex-direction: column;
-    gap: 8px;
-    margin: 10px;
-
+    gap: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
+    vertical-align: top; /* Para que se alineen correctamente en fila */
 }
 
-.item-contacto:hover {
+.item-tarea:hover {
     transform: translateY(-2px);
 }
 
-.item-contacto img {
+.item-tarea img {
     width: 40px;
     height: 40px;
     object-fit: contain;
 }
 
-.item-contacto p {
+.item-tarea p {
     margin: 0;
     color: #1f2933;
     font-weight: 600;
 }
 
-.item-contacto .telefono {
-    color: #1d4ed8; /* azul */
+/* Estados de la tarea */
+.item-tarea .realizada {
+    color: green;
+    font-weight: 600;
+}
+.item-tarea .pendiente {
+    color: orange;
+    font-weight: 600;
+}
+.item-tarea .cancelada {
+    color: red;
+    font-weight: 600;
 }
 
-.contacto-botones {
+/* Contenedor de botones */
+.tarea-botones {
     display: flex;
     gap: 10px;
     margin-top: 10px;
-    justify-content: flex-end; /* Alinea los botones a la derecha */
+    justify-content: flex-end;
 }
 
 /* Botones comunes */
@@ -67,7 +75,7 @@
 
 /* Botón Eliminar */
 .btn-eliminar {
-    background-color: #ef4444; /* rojo */
+    background-color: #ef4444;
     color: white;
 }
 
@@ -76,7 +84,7 @@
     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.5);
 }
 
-.form-edit-contacto {
+.form-edit-tarea {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -92,8 +100,8 @@
         0 3px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Inputs */
-.form-edit-contacto input {
+.form-edit-tarea input,
+.form-edit-tarea select {
     width: 100%;
     padding: 1.2rem 1rem;
 
@@ -106,14 +114,14 @@
     transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-edit-contacto input:focus {
+.form-edit-tarea input:focus,
+.form-edit-tarea select:focus {
     outline: none;
-    border-color: #22c55e;
-    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
-/* Botón */
-.form-edit-contacto button {
+.form-edit-tarea button {
     padding: 1rem;
 
     border: none;
@@ -129,7 +137,7 @@
     transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-.form-edit-contacto button:hover {
+.form-edit-tarea button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(34, 197, 94, 0.35);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
 }

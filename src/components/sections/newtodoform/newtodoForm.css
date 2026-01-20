@@ -1,0 +1,57 @@
+.form-tarea {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 3.2rem;
+    max-width: 480px;
+    width: 100%;
+
+    background: #ffffff;
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08),
+        0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Título */
+.form-tarea h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    color: #0f172a;
+}
+
+/* Inputs */
+.input-tarea,
+.form-tarea select {
+    width: 100%;
+    padding: 1.4rem 1.2rem;
+
+    font-size: 1.05rem;
+    border-radius: 16px;
+
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+
+    transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.input-tarea::placeholder {
+    color: #94a3b8;
+}
+
+.input-tarea:focus,
+.form-tarea select:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+/* Botón reutiliza .btn-agregar */
+.hidden {
+    display: none;
+}

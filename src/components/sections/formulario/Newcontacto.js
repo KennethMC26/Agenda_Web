@@ -1,10 +1,10 @@
 import { ItemContacto } from "../../common/itemContacto/ItemContacto.js";
-import { ContactList } from "../contactos/db.js";
+import { getContactsFromStorage, saveContactsToStorage } from "../../common/storage/storage.js"; 
 
 let Formulario = () => {
     let form = document.createElement("form");
     form.className = "form-contacto";
-    form.style.display = "none"; // oculto por defecto
+    form.style.display = "none";
 
     let h3 = document.createElement("h3");
     h3.textContent = "Crear Contacto";
@@ -37,24 +37,22 @@ let Formulario = () => {
         if (nombre && telefono) {
             const contactosSection = document.querySelector(".contactos");
 
-            // Agregar contacto nuevo
             contactosSection.appendChild(ItemContacto("user.svg", nombre, telefono));
             let contacto = {
                 nombre: inputNombre.value,
                 telefono: inputTelefono.value
             };
             console.log(contacto);
+            const contactos = getContactsFromStorage();
+            contactos.push(contacto);
+            saveContactsToStorage(contactos); 
 
-            // Limpiar inputs
             inputNombre.value = "";
             inputTelefono.value = "";
 
-            // Ocultar formulario y mostrar contactos
             form.style.display = "none";
             contactosSection.style.display = "block";
 
-
-            ContactList.push(contactosSection);
         }
     });
     

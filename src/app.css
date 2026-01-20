@@ -20,3 +20,14 @@
 #container {
     height: 100vh;
 }
+
+/*@media (min-width: 400px) {
+    #app {
+        grid-template-columns: 1fr;
+    }
+
+    #nav {
+        height: auto;
+    }
+    
+}*/
