@@ -1,4 +1,5 @@
 let ItemTodolist = (iconTarea, titulo, estado, fecha, onEdit, onDelete) => {
+
     let div = document.createElement("div");
     div.className = "item-tarea";
 
@@ -81,13 +82,23 @@ let ItemTodolist = (iconTarea, titulo, estado, fecha, onEdit, onDelete) => {
 
         formEdit.addEventListener("submit", (e) => {
             e.preventDefault();
-            onEdit(inputTitulo.value.trim(), selectEstado.value, inputFecha.value);
+
+            if (typeof onEdit === "function") {
+                onEdit(
+                    inputTitulo.value.trim(),
+                    selectEstado.value,
+                    inputFecha.value
+                );
+            }
         });
     });
 
     btnEliminar.addEventListener("click", (e) => {
         e.stopPropagation();
-        onDelete();
+
+        if (typeof onDelete === "function") {
+            onDelete();
+        }
     });
 
     return div;
