@@ -1,4 +1,4 @@
-let login = function(){
+let login = function () {
 
     let login = document.createElement("section");
 
@@ -16,12 +16,16 @@ let login = function(){
     let button = document.createElement("button");
     button.innerHTML = "Iniciar Sesion";
 
+    button.addEventListener("click", () => {
+        window.location.href = "src/app.html";
+    });
+
     login.appendChild(h3);
     login.appendChild(user);
     login.appendChild(password);
     login.appendChild(button);
 
     return login;
-}
+};
 
-export {login};
+export { login };
