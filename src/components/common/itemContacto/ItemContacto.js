@@ -1,4 +1,5 @@
 let ItemContacto = (imgContacto, nombre, telefono, onEdit, onDelete) => {
+
     let div = document.createElement("div");
     div.className = "item-contacto";
 
@@ -60,13 +61,22 @@ let ItemContacto = (imgContacto, nombre, telefono, onEdit, onDelete) => {
 
         formEdit.addEventListener("submit", (e) => {
             e.preventDefault();
-            onEdit(inputNombre.value.trim(), inputTelefono.value.trim());
+
+            if (typeof onEdit === "function") {
+                onEdit(
+                    inputNombre.value.trim(),
+                    inputTelefono.value.trim()
+                );
+            }
         });
     });
 
     btnEliminar.addEventListener("click", (e) => {
         e.stopPropagation();
-        onDelete();
+
+        if (typeof onDelete === "function") {
+            onDelete();
+        }
     });
 
     return div;
